@@ -2,9 +2,7 @@ public class Task3 {
     static class BankAccount {
         private double balance;
 
-        public BankAccount(){
-            balance = 0;
-        }
+        public BankAccount(){}
         public BankAccount(double balance){
             this.balance = balance;
         }
