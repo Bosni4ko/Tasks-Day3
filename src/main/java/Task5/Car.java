@@ -14,10 +14,13 @@ public class Car extends Vehicle{
 
     public void accelerate(int accSpeed){
         if(isEngineOn){
-            if(this.speed + accSpeed < this.maxSpeed/gearCount * gear){
-                this.speed += accSpeed;
+            if(accSpeed > 0){
+                if(this.speed + accSpeed < this.maxSpeed/gearCount * gear){
+                    this.speed += accSpeed;
+                }
+                else this.speed = this.maxSpeed/gearCount * gear;
             }
-            else this.speed = this.maxSpeed/gearCount * gear;
+            else  System.out.println("Can't accelerate backwards");
         }
         else System.out.println("Engine is turned off");
 
@@ -32,7 +35,9 @@ public class Car extends Vehicle{
     }
 
     public void brake(){
+
         speed = 0;
+        gear = 0;
     }
 
     public void changeGear(int gear){
